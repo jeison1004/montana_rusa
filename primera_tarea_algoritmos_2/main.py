@@ -1,7 +1,7 @@
 from repositorio import Repositorio
 from commit import Commit
 from archivo import Archivo
-from rama_v2 import Rama
+from rama import Rama
 from archivo import lista_para_commit
 
 repositorio = Repositorio()
