@@ -26,7 +26,7 @@ class Archivo:
             return "Archivos pasados al stage"
 
 
-#Se instancia el objeto, y se guarda la lista en una variable para que sea usado en el modulo repositorio
+#Se instancia el objeto, y se guarda la lista en una variable para que sea usado en main
 mi_lista = Archivo()
 mi_lista.git_add()
 lista_para_commit = mi_lista.archivos_para_commit
