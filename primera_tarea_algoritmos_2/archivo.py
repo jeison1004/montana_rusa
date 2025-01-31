@@ -1,4 +1,6 @@
-#En este archivo estara la clase Archivo, y se usara para que el usuario cree nuevos archivos
+"""
+En este archivo estara la clase Archivo, y se usara para que el usuario quiera crear nuevos archivos
+"""
 
 class Archivo:
     list_total_archivos = []  # Lista en donde se guardarán los archivos en forma de una lista de dos elementos
@@ -20,17 +22,18 @@ class Archivo:
         if not self.list_total_archivos:
             return "No hay archivos"
         else:
-            # Crear una copia de los archivos y los pasa al stage 
+            # Crear una COPIA real de los archivos en lugar de asignar una referencia
             self.archivos_para_commit = [archivo.copy() for archivo in self.list_total_archivos]
             self.list_total_archivos.clear()
             return "Archivos pasados al stage"
 
 
-#Se instancia el objeto, y se guarda la lista en una variable para que sea usado en main
+
 mi_lista = Archivo()
+mi_lista.crear_archivo("nombre.txt", "blablabla")
 mi_lista.git_add()
 lista_para_commit = mi_lista.archivos_para_commit
-
+# print(lista_para_commit)
 
 
 

@@ -1,7 +1,7 @@
 from repositorio import Repositorio
 from commit import Commit
 from archivo import Archivo
-from rama import Rama
+from rama_v2 import Rama
 from archivo import lista_para_commit
 
 repositorio = Repositorio()
@@ -9,7 +9,7 @@ commit = Commit()
 archivo = Archivo()
 
 def main():
-     #Ciclo para que el usuario elija las opciones
+    
     while True:
         print("\n === Git Simulation Command Menu === \n" )
         print("'git branch <name_branch>' - Crear nueva rama")
@@ -23,8 +23,8 @@ def main():
         print("'git add .' - Agregar todos los archivos al staged")
         print("===================================")
 
-        #Entrada de datos
         comando = input()
+
         match comando:
             case "git branch":
                 print(repositorio.git_branch())
@@ -76,6 +76,9 @@ def main():
                     Rama(rama_commit).agregar_commit(ultimo_commit)  # Agrega el commit a la rama
                 else:
                     print(f"No se encontró ningún commit en la rama '{rama_commit}'.")
+
+print(f"desde main {lista_para_commit}")
+      
 
 
 if __name__ == "__main__":

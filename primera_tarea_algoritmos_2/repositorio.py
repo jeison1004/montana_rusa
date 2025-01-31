@@ -38,7 +38,7 @@ class Repositorio:
 
         # Buscar la rama_merge en lista_commit
         for commit in lista_commit:
-            if commit[3] == rama_merge:  # En la posicion 3 esta el nombre de la rama
+            if commit[3] == rama_merge:  # Suponiendo que el nombre de la rama está en la posición 3
                 rama_merge_encontrada = True
                 archivos_a_mergear = commit[-1]  # Extraemos el último elemento (archivos)
                 break
@@ -55,6 +55,14 @@ class Repositorio:
         return "La rama actual no existe"
 
 
+
+
+# prueba = Repositorio()
+# print(prueba.git_branch())
+# prueba.git_branch_crear_rama("CUlo")
+# prueba.git_checkout_cambiar_rama("CUlo")
+
+# print(prueba.git_branch())
 
 
         

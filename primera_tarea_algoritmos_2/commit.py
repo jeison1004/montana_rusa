@@ -9,8 +9,8 @@ class Commit:
     # Método para cuando el usuario ingrese el comando git commit
     def git_commit(self, descripcion, rama):
         nuevo_commit = [] 
-        id = str(uuid.uuid4())  #En esta linea se crea el id unico para cada commit
-        date = datetime.now() #Se da la hora en que se hizo el commit
+        id = str(uuid.uuid4())  
+        date = datetime.now()
         archivos_en_commit = lista_para_commit[:]  # Copia sin limpiar la lista
 
 
@@ -24,7 +24,7 @@ class Commit:
 
         return "Commit hecho con éxito"
 
-    # Método para cuando el usuario ingrese el comando git log, muestra todos los commit hechos
+    # Método para cuando el usuario ingrese el comando git log
     def git_log(self):
         logs = []  
         for commit in self.total_commit:
@@ -35,11 +35,14 @@ class Commit:
         for log in logs:
             print(log)
         
-        
-#Instanciamos un objeto y guardamos la lista de los commit en na variable para que se pueda usar en repositorio
+        return logs  # Retorna la lista de logs si es necesario
+
+
+
+#Esto es para usar la lista de commit en el main
 objeto_commit = Commit()
 lista_commit = objeto_commit.total_commit
-
+print(lista_para_commit)
 
  
 
